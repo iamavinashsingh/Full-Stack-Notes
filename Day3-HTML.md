@@ -64,27 +64,30 @@
 <table border="2">
       <thead>
         <tr>
-            <th>Name</th>
-            <th>Role</th>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
         </tr>
       </thead>
       
       
       <tbody>
-        <tr>
-            <td>Avinash</td>
-            <td>CEO</td>
+        <tr >
+            <td rowspan="2">Row 1 Col 1</td>
+            <td>Row 1 Col 2</td>
+            <td>Row 1 Col 3</td>
+            
         </tr>
         
         <tr>
-            <td>Harshit</td>
-            <td>CMO</td>
+            
+            <td>Row 2 Col 2</td>
+            <td>Row 2 Col 3</td>
         </tr>
       </tbody>
       <tfoot>
-        <tr>
-          <td>Total</td>
-          <td>2</td>
+        <tr >
+          <td colspan='3'>Row 3 Col 1</td>
         </tr>
         
       </tfoot>
@@ -95,17 +98,15 @@
 
 ### Output
 
-```
 
-|   Name     |     Role       |
-|------------|----------------|
-|  Avinash   |     CEO        |
-|  Harshit   |     CMO        |
-|------------|----------------|
-|    Total   |     2          |
+|   Col 1    |    Col 2       |    Col 3       |
+|------------|----------------|----------------|
+| Row 1 Col 1| Row 1 col 2    |  Row 1 Col 3   |
+|            | Row 2 col 2    |  Row 2 Col 3   |
+|              Row 3 Col 1                     |
 
 
-```
+
 
 
 
