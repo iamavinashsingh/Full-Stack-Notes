@@ -1,6 +1,11 @@
 # HTML Nested Lists & Tables
 
-## Code
+## Nested Lists
+
+**<ul>** :- Unordered list ( • , ◦)
+**<ol>** :- Ordered List  (1. ,2. )
+
+### Code
 
 ```html
 
@@ -31,7 +36,7 @@
 
 ```
 
-## Output 
+### Output 
 
 ```bash
 • India
@@ -45,3 +50,71 @@
   ◦ NewYork
   ◦ New Jersey
 ```
+
+## Table
+
+**<tr>** :- table row
+**<th>** :- table header
+**<td>** :- table default
+
+### Code
+
+```html
+
+<table border="2">
+      
+      <tr>
+          <th>Name</th>
+          <th>Role</th>
+      </tr>
+      
+      <tr>
+          <td>Avinash</td>
+          <td>CEO</td>
+      </tr>
+      
+      <tr>
+          <td>Harshit</td>
+          <td>CMO</td>
+      </tr>
+      
+    </table>
+
+
+
+```
+
+### Output
+
+```
+
+|   Name     |     Role       |
+|------------|----------------|
+|  Avinash   |     CEO        |
+|  Harshit   |     CMO        |
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
