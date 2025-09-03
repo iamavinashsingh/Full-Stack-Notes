@@ -2,8 +2,8 @@
 
 ## Nested Lists
 
-**<ul>** :- Unordered list ( • , ◦)
-**<ol>** :- Ordered List  (1. ,2. )
+- ul  :- Unordered list ( • , ◦)
+- ol  :- Ordered List  (1. ,2. )
 
 ### Code
 
@@ -53,34 +53,43 @@
 
 ## Table
 
-**<tr>** :- table row
-**<th>** :- table header
-**<td>** :- table default
+- tr :- table row
+- th :- table header
+- td :- table default
 
 ### Code
 
 ```html
 
 <table border="2">
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+      </thead>
       
-      <tr>
-          <th>Name</th>
-          <th>Role</th>
-      </tr>
       
-      <tr>
-          <td>Avinash</td>
-          <td>CEO</td>
-      </tr>
-      
-      <tr>
-          <td>Harshit</td>
-          <td>CMO</td>
-      </tr>
+      <tbody>
+        <tr>
+            <td>Avinash</td>
+            <td>CEO</td>
+        </tr>
+        
+        <tr>
+            <td>Harshit</td>
+            <td>CMO</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>2</td>
+        </tr>
+        
+      </tfoot>
       
     </table>
-
-
 
 ```
 
@@ -92,6 +101,8 @@
 |------------|----------------|
 |  Avinash   |     CEO        |
 |  Harshit   |     CMO        |
+|------------|----------------|
+|    Total   |     2          |
 
 
 ```
