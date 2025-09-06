@@ -1,4 +1,5 @@
-Short Notes: How the Internet Works
+# Short Notes
+## How the Internet Works
 1. The Core Problem & Solution
 Problem: Getting information from one computer to another that isn't in the same room.
 
@@ -73,6 +74,113 @@ You type a friendly domain name (google.com) into your browser. Your computer as
 
 The Lookup Process is hierarchical: It first asks the root directory, then the .com directory, and finally Google's own directory to get the correct IP. This result is then cached (remembered) for a while for faster future access.
 
+## HTML Essentials: Quick Reference Guide
+### What is HTML?
+HyperText Markup Language - The standard language for creating web pages, using tags to structure content.
 
+Basic Structure
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    <!-- Content goes here -->
+</body>
+</html>
+```
+Key Elements
+1. Headings (<h1> to <h6>)
+Purpose: Create hierarchical titles (h1=most important, h6=least)
+
+Example:
+
+```html
+<h1>Main Title</h1>
+<h2>Section Heading</h2>
+<h3>Sub-section</h3>
+```
+2. Paragraphs (<p>)
+Purpose: Group text into blocks with automatic spacing
+
+Example:
+
+```html
+<p>This is a paragraph of text.</p>
+<p>This is another paragraph.</p>
+```
+3. Horizontal Rule (<hr>)
+Purpose: Thematic break between content sections
+
+Example:
+
+```html
+<p>First section</p>
+<hr>
+<p>Second section</p>
+```
+4. Line Break (<br>)
+Purpose: Force a new line without starting a new paragraph
+
+Example:
+
+```html
+<p>First line<br>Second line</p>
+```
+5. Lists
+Unordered List (<ul>): Bulleted list for related items
+
+Ordered List (<ol>): Numbered list for sequential items
+
+List Items (<li>): Individual items in a list
+
+```html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<ol>
+  <li>First step</li>
+  <li>Second step</li>
+</ol>
+```
+6. Links (<a>)
+Purpose: Create clickable hyperlinks to other resources
+
+Attributes:
+
+href: Destination URL
+
+target: Where to open link (_blank for new tab)
+
+```html
+<a href="https://example.com" target="_blank">Visit Example</a>
+```
+7. Images (<img>)
+Purpose: Embed images in webpage
+
+Attributes:
+
+src: Image source (URL or path)
+
+alt: Alternative text (accessibility)
+
+width/height: Dimensions
+
+```html
+<img src="dog.jpg" alt="Cute dog" width="300" height="200">
+```
+### Essential Tools
+- VS Code: Code editor with extensions (Live Server, Prettier)
+- Live Preview: Real-time view of HTML changes
+- Browser DevTools: Inspect and debug HTML
+
+### Best Practices
+- Use semantic HTML for better accessibility
+- Always include alt text for images
+- Maintain proper heading hierarchy
+- Validate your HTML code
 
 
