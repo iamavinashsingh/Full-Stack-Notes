@@ -183,4 +183,46 @@ width/height: Dimensions
 - Maintain proper heading hierarchy
 - Validate your HTML code
 
+## File Paths: Quick Guide
+Core Concept
+Websites use multiple files (HTML, CSS, images). File paths tell browsers how to find these files.
 
+Relative Paths (For Your Own Files)
+Paths that start from your current file's location.
+
+Same Folder:
+
+```html
+<img src="logo.png">
+```
+Sub-Folder:
+
+```html
+<img src="images/logo.png">
+```
+Parent Folder:
+
+```html
+<img src="../images/logo.png">
+```
+<!-- ../ = go up one level -->
+Absolute Paths (For External Resources)
+Full URLs that point to resources on other websites.
+
+```html
+<a href="https://google.com">Google</a>
+<img src="https://example.com/image.jpg">
+```
+⚠️ Important Security Note
+Browsers block local file access (like C:/Users/...) for security. Always use relative paths for your project files.
+
+OS Differences
+```
+Windows: C:\Folder\file.txt (backslashes, drive letters)
+
+macOS/Linux: /Users/name/file.txt (forward slashes, single root)
+```
+Rule of Thumb
+Your own files → Relative paths
+
+Other websites → Absolute paths
