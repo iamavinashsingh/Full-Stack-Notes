@@ -318,7 +318,114 @@ Submit Button
 - Use appropriate input types for better mobile experience
 - Validate inputs with required attribute
 - Provide clear error messages
-- 
+  
 Forms create the interactive elements that allow users to communicate with websites, making the web a two-way experience.
 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1>University Registration Form </h1>
+      <p>Please Fill out the  form  below to register.</p>
+      <hr />
+      <h2>Personal Details</h2>
+      <label for="firstName">First Name :</label>
+      <input type="text" id="firstName" placeholder="e.g., Arjun" name="firstName">
+      <br />
+      <br />
+      <label for="lastName">Last Name :</label>
+      <input type="text" id="lastName" placeholder="e.g., Kumar" name="lastName">
+      <br />
+      <br />
+      <label for="dob">Date of Birth :</label>
+      <input  type="date" id="dob" name="dob" />
+      <br />
+      <br />
+      <label for="gender">Gender:</label>
+      <br />
+      <input type="radio" id="gender" name="gender" value="male">Male </ input>
+      <br />
+      <input type="radio" id="gender" name="gender" value="female">Female </ input>
+      <br />
+      <input type="radio" id="gender" name="gender" value="other">Other </ input>
+      <br />
+      <br />
+      <label for="img">Upload Your Photo :</label>
+      <br />
+      <input type="file" name="image" id="img"/>
+      <br />
+      <br />
+      <hr />
+      <h2>Contact Information</h2>
+      <br />
+      <br />
+      <label for="email">Email Address :</label>
+      <input type="mail" id="email" placeholder="xyz@mail.com" name="email">
+      <br />
+      <br />
+      <label for="number">Phone Number:</label>
+      <input type="number" id="number" placeholder="+91 0000 0000 00" name="email">
+      <br />
+      <br />
+      <label for="addr">Mailing Address :</label>
+      <br>
+      <textarea id="addr" name="address" placeholder="Flat No. 102 , XYZ Street ,City , State ,ZIP Code" rows="10" cols="50"></textarea>
+      <br>
+      <br>
+      <hr />
+      <h2>Academic Information</h2>
+      <br />
+      <br />
+      <label for="Course">Select Your Course:</label>
+      <select id="Course" name="course" >
+        <option value="">Please choose a course</option>
+        <option value="C++">C++</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+      </select>
+      <br />
+      <br />
+      <label for="extra">Extracurricular Interests :</label>
+      <br />
+      <input type="checkbox" name="extra" id="extra" value="Sports">Sports</ input>
+      <br />
+      <input type="checkbox" name="extra" id="extra" value="Music & Arts">Music & Arts</ input>
+      <br />
+      <input type="checkbox" name="extra" id="extra" value="Robotics">Robotics</ input>
+      <br />
+      <input type="checkbox" name="extra" id="extra" value="Content Creation">Content Creation</ input>
+      <br />
+      <br />
+      <hr />
+      <h2>Create Your Account</h2>
+      <br />
+      <br />
+      <label for="password"> Create a Password :</label>
+      <input type="password" name="password" id="password" />
+      <br />
+      <br />
+      <label for="Security">Security Question :</label>
+      <select id="Security" name="secques" >
+        <option value="What city were you born in?">What city were you born in?</option>
+        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+        <option value="What is your favorite color?">What is your favorite color?</option>
+        <option value="What is your favorite food?">What is your favorite food?</option>
+      </select>
+      <br />
+      <br />
+      <label for="securityAns">Security Answer :</label>
+      <input type="text" name="secans" id="securityAns" />
+      <br />
+      <br />
+      <input type="checkbox" name="terms">I agree to the Terms & Conditions.</ input>
+      <br /><br /> <hr />
+      <button type="submit"> Register </button>
+      <button type="clear">Clear Form</button>
+  </body>
+</html>
+```
 
