@@ -97,3 +97,11 @@
     </form>
 </body>
 </html>
+```
+
+## Key Points to Remember
+- Use semantic HTML for better accessibility
+- Always include alt text for images
+- Validate forms on both client and server side
+- Use relative paths for project files, absolute paths for external resources
+- HTML creates structure, CSS adds style, JavaScript adds interactivity
