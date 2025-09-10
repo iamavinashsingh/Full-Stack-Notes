@@ -64,17 +64,17 @@ Inline-level Behavior: For elements that are small pieces of content that exist 
 ### 1. Block-Level Elements
 Think of these as the paragraphs and chapters of your document. They are the major, standalone pieces of structure.
 The Rules of a Block-Level Element:
-Always Starts on a New Line: A block element will not sit next to other elements on the same line. It forces a line break before and after itself.
-Takes Up the Full Width Available: By default, a block element's box will stretch horizontally to fill the entire width of its parent container. You can see this if you give it a background color.
-Respects width and height: You can explicitly set the width and height properties on a block-level element.
-Respects Top and Bottom margin and padding: You can push a block element up or down with margin-top and margin-bottom.
+- **Always Starts on a New Line:** A block element will not sit next to other elements on the same line. It forces a line break before and after itself.
+- **Takes Up the Full Width Available:** By default, a block element's box will stretch horizontally to fill the entire width of its parent container. You can see this if you give it a background color.
+- **Respects width and height:** You can explicitly set the width and height properties on a block-level element.
+- **Respects Top and Bottom margin and padding:** You can push a block element up or down with margin-top and margin-bottom.
 Common Block-Level Elements:
-- <div> (The generic block container)
-- <h1>, <h2>, etc. (Headings)
-- <p> (Paragraphs)
-- <ul>, <ol>, <li> (Lists and list items)
-- <form>
-- <header>, <footer>, <main>, <section>, <article>, <nav> (Semantic layout elements)
+- **<div>** (The generic block container)
+- **<h1>, <h2>** etc. (Headings)
+- **<p>** (Paragraphs)
+- **<ul>, <ol>, <li>** (Lists and list items)
+- **<form>**
+- **<header>, <footer>, <main>, <section>, <article>, <nav>**(Semantic layout elements)
 **Analogy**: Block-level elements are like bricks. You stack them on top of each other to build a wall. Each new brick starts a new row.
 Example:
 ```
@@ -86,16 +86,16 @@ Result: You will see two full-width colored bars stacked vertically, even though
 ## 2. Inline-Level Elements
 Think of these as the words or phrases within a sentence. They are designed to sit inside a block-level element without disrupting the flow of the text.
 The Rules of an Inline-Level Element:
-Does NOT Start on a New Line: An inline element will sit happily next to other inline elements (or text) on the same line, as long as there is space.
-Takes Up Only as Much Width as Necessary: Its box is only as wide as the content inside it. It does not stretch to fill the parent.
-Does NOT Respect width and height: You cannot set a width or height on an inline element. The properties will be ignored.
-Partially Respects margin and padding: You can apply padding-left, padding-right, margin-left, and margin-right. However, margin-top and margin-bottom will be ignored. An inline element cannot be pushed up or down.
+**Does NOT Start on a New Line:** An inline element will sit happily next to other inline elements (or text) on the same line, as long as there is space.
+**Takes Up Only as Much Width as Necessary:** Its box is only as wide as the content inside it. It does not stretch to fill the parent.
+**Does NOT Respect width and height:** You cannot set a width or height on an inline element. The properties will be ignored.
+**Partially Respects margin and padding:** You can apply padding-left, padding-right, margin-left, and margin-right. However, margin-top and margin-bottom will be ignored. An inline element cannot be pushed up or down.
 Common Inline-Level Elements:
-- <span> (The generic inline container)
-- <a> (Anchor/link)
-- <img> (Image) - This one is a special case, an "inline-block" by default in some contexts, but it flows inline.
-- <strong>, <em> (Emphasis)
-- <input>, <button>, <label> (Form elements)
+- **<span>** (The generic inline container)
+- **<a>** (Anchor/link)
+- **<img>** (Image) - This one is a special case, an "inline-block" by default in some contexts, but it flows inline.
+- **<strong>, <em>** (Emphasis)
+- **<input>, <button>, <label>** (Form elements)
 **Analogy**: Inline elements are like words in a sentence. They flow one after another until they run out of space, at which point they wrap to the next line.
 Example:
 ```html
@@ -119,10 +119,13 @@ display: inline-block;: The Best of Both Worlds. This is a hybrid mode. The elem
 Sit on the same line as other elements (like inline).
 But it will respect width, height, margin-top, and margin-bottom (like block).
 Use Case: Creating a grid of cards or a set of buttons that need to be a specific size but also sit side-by-side.
-display: none;: Hides the element completely. The element is removed from the page as if it never existed. It takes up no space. This is commonly used with JavaScript to show and hide elements.
-display: flex;: The modern standard for one-dimensional layouts (see Flexbox).
-display: grid;: The modern standard for two-dimensional layouts (see CSS Grid).
+```css
+display: none; // Hides the element completely. The element is removed from the page as if it never existed. It takes up no space. This is commonly used with JavaScript to show and hide elements.
+display: flex;  // The modern standard for one-dimensional layouts (see Flexbox).
+display: grid;  // The modern standard for two-dimensional layouts (see CSS Grid).
+```
 Example of Changing Display Behavior:
+```html
 <style>
   nav a {
     display: inline-block; /* Make the links behave like hybrid blocks */
@@ -138,42 +141,16 @@ Example of Changing Display Behavior:
   <a href="#">About</a>
   <a href="#">Contact</a>
 </nav>
-​
+```
 Result: Instead of plain text links, you now have three distinct, styled buttons sitting next to each other, each with its own size and spacing. This is only possible because we changed their default display property.
-Block vs. Inline Elements: The Definitive Comparison
-Feature
-display: block
-display: inline
-First Principle / "Why?"
-Flow & Position
-Starts on a new line. Stacks vertically.
-Sits on the same line as adjacent content. Flows horizontally.
-Block is for major structure (like bricks in a wall). Inline is for content within a line of text (like words in a sentence).
-Width
-Takes up the full width available in its parent container by default.
-Takes up only as much width as its content needs.
-A structural block needs to establish a new horizontal context. An inline element must fit neatly within the existing flow.
-Height
-Height is determined by the content inside it, unless a height is explicitly set.
-Height is determined by the line-height of the text. height property is ignored.
-A block's height can be controlled because it's a standalone container. An inline element's height is governed by the typography of the line it sits on.
-width & height Properties
-Respected. You can set width and height with CSS.
-Ignored. Setting width or height has no effect.
-You can define the dimensions of a "brick," but you can't define the dimensions of a single "word" without disrupting the entire sentence.
-margin (Top & Bottom)
-Respected. Pushes other block elements away vertically.
-Ignored. margin-top and margin-bottom have no effect on layout.
-Pushing a block up/down is part of page structure. Pushing a word up/down would break the line's vertical alignment and is therefore forbidden.
-padding (Top & Bottom)
-Respected. Increases the element's height and pushes content inward.
-Ignored for layout. The padding is visually rendered but does not increase the line-height or push other lines away.
-Adding vertical padding to a block makes the "brick" taller. Adding it to a word would disrupt the line spacing, so it's only a visual effect.
-margin & padding (Left & Right)
-Respected.
-Respected.
-Horizontal spacing is allowed for both, as it does not disrupt the fundamental top-to-bottom flow of the document.
-Typical HTML Tags
-div, p, h1-h6, ul, ol, li, form, header, footer, main, section
-span, a, img, strong, em, input, label, button
-Tags are given a default display value that matches their semantic purpose.
+## Block vs. Inline Elements: The Definitive Comparison
+| Feature                         | `display: block`                                                                                     | `display: inline`                                                                                                  | First Principle / "Why?"                                                                                                                                       |
+|---------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Flow & Position**             | Starts on a new line. Stacks vertically.                                                             | Sits on the same line as adjacent content. Flows horizontally.                                                     | **Block** is for major structure (like bricks in a wall). **Inline** is for content within a line of text (like words in a sentence).                        |
+| **Width**                       | Takes up the **full width available** in its parent container by default.                           | Takes up only **as much width as its content needs**.                                                              | A structural block needs to establish a new horizontal context. An inline element must fit neatly within the existing flow.                                  |
+| **Height**                      | Height is determined by the content inside it, unless a `height` is explicitly set.                 | Height is determined by the `line-height` of the text. `height` property is ignored.                              | A block's height can be controlled because it's a standalone container. An inline element's height is governed by the typography of the line it sits on.     |
+| **`width` & `height` Properties** | Respected. You can set `width` and `height` with CSS.                                                | Ignored. Setting `width` or `height` has no effect.                                                                | You can define the dimensions of a "brick," but you can't define the dimensions of a single "word" without disrupting the entire sentence.                   |
+| **`margin` (Top & Bottom)**     | Respected. Pushes other block elements away vertically.                                              | Ignored. `margin-top` and `margin-bottom` have no effect on layout.                                                | Pushing a block up/down is part of page structure. Pushing a word up/down would break the line's vertical alignment and is therefore forbidden.              |
+| **`padding` (Top & Bottom)**    | Respected. Increases the element's height and pushes content inward.                                | Ignored for layout. The padding is visually rendered but does not increase the line-height or push other lines away. | Adding vertical padding to a block makes the "brick" taller. Adding it to a word would disrupt the line spacing, so it's only a visual effect.              |
+| **`margin` & `padding` (Left & Right)** | Respected.                                                                                         | Respected.                                                                                                          | Horizontal spacing is allowed for both, as it does not disrupt the fundamental top-to-bottom flow of the document.                                           |
+| **Typical HTML Tags**           | `div`, `p`, `h1`–`h6`, `ul`, `ol`, `li`, `form`, `header`, `footer`, `main`, `section`              | `span`, `a`, `img`, `strong`, `em`, `input`, `label`, `button`                                                     | Tags are given a default `display` value that matches their semantic purpose.                                                                                 |
