@@ -69,12 +69,14 @@ The Rules of a Block-Level Element:
 - **Respects width and height:** You can explicitly set the width and height properties on a block-level element.
 - **Respects Top and Bottom margin and padding:** You can push a block element up or down with margin-top and margin-bottom.
 Common Block-Level Elements:
-- **<div>** (The generic block container)
-- **<h1>, <h2>** etc. (Headings)
-- **<p>** (Paragraphs)
-- **<ul>, <ol>, <li>** (Lists and list items)
-- **<form>**
-- **<header>, <footer>, <main>, <section>, <article>, <nav>**(Semantic layout elements)
+```html
+- <div> //(The generic block container)
+- <h1>, <h2> etc. // (Headings)
+- <p> //(Paragraphs)
+- <ul>, <ol>, <li> //(Lists and list items)
+- <form>
+- <header>, <footer>, <main>, <section>, <article>, <nav> // (Semantic layout elements)
+```
 **Analogy**: Block-level elements are like bricks. You stack them on top of each other to build a wall. Each new brick starts a new row.
 Example:
 ```
