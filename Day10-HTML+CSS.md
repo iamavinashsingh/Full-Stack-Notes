@@ -45,22 +45,23 @@ The Core Problem: The original CSS box model (called content-box) works in an un
 The Logical Solution: Create a new box model behavior that matches our real-world intuition. This is box-sizing: border-box;.
 This property tells the browser: "When I set width: 300px;, I want the final visible width of the box, including the border and padding, to be exactly 300px. If I add padding or a border, you must shrink the content area to make room for them, but do not change the final outer dimension."
 The Universal Reset: Since this behavior is almost always what developers want, the best practice is to apply it to every single element on the page with a universal selector at the very top of the CSS file. 
-```bash
+```css
 *, *::before, *::after {
   box-sizing: border-box;
 }
-​```
+
+```
 This sets a sane, predictable foundation for all your layout work. It's the first rule you should teach your students to add to their stylesheets.
 Content Must Flow on the Page
 The fundamental truth is that a web page is a document. Like a book, its content needs a default way to "flow." In Western languages, that flow is from top to bottom, and left to right.
-The Core Problem
+## The Core Problem
 How does the browser know how to arrange different types of content within this flow? Should an element create a "new paragraph," or should it sit nicely within the current line of text?
 For example, a heading should always start on a new line. But a link within a sentence should not.
 The Logical Solution: Two Default Behaviors
 The solution is to give every single HTML element one of two default layout behaviors, or "display types."
 Block-level Behavior: For elements that are major structural blocks of the page.
 Inline-level Behavior: For elements that are small pieces of content that exist within a larger block.
-1. Block-Level Elements
+### 1. Block-Level Elements
 Think of these as the paragraphs and chapters of your document. They are the major, standalone pieces of structure.
 The Rules of a Block-Level Element:
 Always Starts on a New Line: A block element will not sit next to other elements on the same line. It forces a line break before and after itself.
@@ -68,19 +69,21 @@ Takes Up the Full Width Available: By default, a block element's box will stretc
 Respects width and height: You can explicitly set the width and height properties on a block-level element.
 Respects Top and Bottom margin and padding: You can push a block element up or down with margin-top and margin-bottom.
 Common Block-Level Elements:
-<div> (The generic block container)
-<h1>, <h2>, etc. (Headings)
-<p> (Paragraphs)
-<ul>, <ol>, <li> (Lists and list items)
-<form>
-<header>, <footer>, <main>, <section>, <article>, <nav> (Semantic layout elements)
-Analogy: Block-level elements are like bricks. You stack them on top of each other to build a wall. Each new brick starts a new row.
+- <div> (The generic block container)
+- <h1>, <h2>, etc. (Headings)
+- <p> (Paragraphs)
+- <ul>, <ol>, <li> (Lists and list items)
+- <form>
+- <header>, <footer>, <main>, <section>, <article>, <nav> (Semantic layout elements)
+**Analogy**: Block-level elements are like bricks. You stack them on top of each other to build a wall. Each new brick starts a new row.
 Example:
+```
 <p style="background-color: lightblue;">This is a paragraph.</p>
 <p style="background-color: lightcoral;">This is another paragraph.</p>
 ​
+```
 Result: You will see two full-width colored bars stacked vertically, even though there's plenty of horizontal space for them to sit side-by-side. That's the block-level behavior in action.
-2. Inline-Level Elements
+## 2. Inline-Level Elements
 Think of these as the words or phrases within a sentence. They are designed to sit inside a block-level element without disrupting the flow of the text.
 The Rules of an Inline-Level Element:
 Does NOT Start on a New Line: An inline element will sit happily next to other inline elements (or text) on the same line, as long as there is space.
@@ -88,20 +91,21 @@ Takes Up Only as Much Width as Necessary: Its box is only as wide as the content
 Does NOT Respect width and height: You cannot set a width or height on an inline element. The properties will be ignored.
 Partially Respects margin and padding: You can apply padding-left, padding-right, margin-left, and margin-right. However, margin-top and margin-bottom will be ignored. An inline element cannot be pushed up or down.
 Common Inline-Level Elements:
-<span> (The generic inline container)
-<a> (Anchor/link)
-<img> (Image) - This one is a special case, an "inline-block" by default in some contexts, but it flows inline.
-<strong>, <em> (Emphasis)
-<input>, <button>, <label> (Form elements)
-Analogy: Inline elements are like words in a sentence. They flow one after another until they run out of space, at which point they wrap to the next line.
+- <span> (The generic inline container)
+- <a> (Anchor/link)
+- <img> (Image) - This one is a special case, an "inline-block" by default in some contexts, but it flows inline.
+- <strong>, <em> (Emphasis)
+- <input>, <button>, <label> (Form elements)
+**Analogy**: Inline elements are like words in a sentence. They flow one after another until they run out of space, at which point they wrap to the next line.
 Example:
+```html
 <p>
   This is a sentence with an
   <a href="#" style="background-color: lightgreen;">inline link</a>
   and also some
   <strong style="background-color: yellow;">strong text</strong>.
 </p>
-​
+```
 Result: The background colors will only cover the exact width of the link and the strong text. Both elements will remain part of the normal flow of the sentence.
 The display Property: Taking Control
 The Problem: The default behavior of an element is not always what we want. What if we want a list of links in our navigation bar to sit side-by-side instead of stacking vertically like blocks? What if we want a <span> to have a specific width and height?
