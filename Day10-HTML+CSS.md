@@ -93,11 +93,14 @@ The Rules of an Inline-Level Element:
 **Does NOT Respect width and height:** You cannot set a width or height on an inline element. The properties will be ignored.
 **Partially Respects margin and padding:** You can apply padding-left, padding-right, margin-left, and margin-right. However, margin-top and margin-bottom will be ignored. An inline element cannot be pushed up or down.
 Common Inline-Level Elements:
-- **<span>** (The generic inline container)
-- **<a>** (Anchor/link)
-- **<img>** (Image) - This one is a special case, an "inline-block" by default in some contexts, but it flows inline.
-- **<strong>, <em>** (Emphasis)
-- **<input>, <button>, <label>** (Form elements)
+```html
+- <span> //(The generic inline container)
+- <a> //(Anchor/link)
+- <img> (Image) //- This one is a special case, an "inline-block" by default in some contexts, but it flows inline.
+- <strong>, <em> (Emphasis)
+- <input>, <button>, <label> //(Form elements)
+
+```
 **Analogy**: Inline elements are like words in a sentence. They flow one after another until they run out of space, at which point they wrap to the next line.
 Example:
 ```html
