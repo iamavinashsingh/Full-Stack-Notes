@@ -1,1 +1,219 @@
-# CSS
+# CSS Notes
+
+## What is CSS?
+
+**CSS** = Cascading Style Sheets  
+It makes websites look **pretty** (colors, fonts, layouts)
+
+- **Main Idea**: HTML handles content, **CSS handles appearance**
+
+---
+
+## Why We Need CSS
+
+Without CSS:
+
+- Websites looked plain and boring  
+- Had to style each element individually  
+- Code was messy and hard to maintain  
+
+---
+
+## How to Add CSS
+
+### 1. Inline CSS (For one element)
+
+```html
+<h1 style="color: blue;">Blue Heading</h1>
+```
+
+### 2. Internal CSS (For one page)
+
+```html
+<style>
+  h1 { color: blue; }
+</style>
+```
+
+### 3. External CSS (Best for whole website)
+
+```html
+<link rel="stylesheet" href="styles.css">
+```
+
+---
+
+## CSS Building Blocks
+
+```css
+selector {
+  property: value;
+}
+```
+
+- **Selector**: Who to style (like `h1`)
+- **Property**: What to change (like `color`)
+- **Value**: How to change it (like `blue`)
+
+---
+
+## 4 Main Selectors
+
+### 1. Element Selector
+
+Styles all elements of that type
+
+```css
+p {
+  color: gray;
+}
+```
+
+### 2. Class Selector (Most common)
+
+Styles elements with that class
+
+```css
+.warning {
+  color: red;
+}
+```
+
+```html
+<p class="warning">This is red</p>
+```
+
+### 3. ID Selector
+
+Styles one specific element
+
+```css
+#header {
+  background: blue;
+}
+```
+
+```html
+<header id="header">...</header>
+```
+
+### 4. Group Selector
+
+Styles multiple elements at once
+
+```css
+h1, h2, h3 {
+  font-family: Arial;
+}
+```
+
+---
+
+## Colors in CSS
+
+### 1. Color Names (Easiest)
+
+```css
+color: red;
+color: lightblue;
+```
+
+### 2. Hex Codes (Most common)
+
+```css
+color: #FF0000;    /* Red */
+color: #0000FF;    /* Blue */
+color: #000000;    /* Black */
+color: #FFFFFF;    /* White */
+```
+
+### 3. RGB (Red, Green, Blue)
+
+```css
+color: rgb(255, 0, 0);        /* Red */
+color: rgba(255, 0, 0, 0.5);  /* See-through red */
+```
+
+### 4. HSL (Hue, Saturation, Lightness)
+
+```css
+color: hsl(0, 100%, 50%);       /* Red */
+color: hsla(0, 100%, 50%, 0.5); /* See-through red */
+```
+
+---
+
+## Text Styling
+
+### Font Family
+
+```css
+body {
+  font-family: Arial, sans-serif;
+}
+```
+
+### Font Size
+
+```css
+p {
+  font-size: 16px;    /* Fixed size */
+  font-size: 1rem;    /* Responsive size */
+}
+```
+
+### Font Weight
+
+```css
+h1 {
+  font-weight: bold;    /* or 700 */
+}
+
+.light-text {
+  font-weight: 300;     /* Thin text */
+}
+```
+
+### Font Style
+
+```css
+.italic {
+  font-style: italic;
+}
+```
+
+### Shortcut Method
+
+```css
+p {
+  font: italic bold 1rem Arial, sans-serif;
+}
+```
+
+---
+
+## Size Units
+
+### Percentage (%)
+
+Relative to parent element
+
+```css
+.sidebar {
+  width: 25%; /* 25% of parent's width */
+}
+```
+
+### Viewport Units
+
+Relative to screen size
+
+```css
+.hero {
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Full screen height */
+}
+```
+
+---
+
